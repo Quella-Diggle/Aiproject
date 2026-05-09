@@ -15,6 +15,7 @@ body,
   user-select: none;
   background: var(--bg, #fafafa);
   color: var(--fg, #222);
+  overflow: hidden;
 }
 
 body[data-theme='dark'] {
@@ -23,6 +24,9 @@ body[data-theme='dark'] {
   --card-border: rgba(255, 255, 255, 0.08);
   --bar-bg: #2a2a30;
   --hover: rgba(255, 255, 255, 0.06);
+  --scroll-thumb: rgba(255, 255, 255, 0.28);
+  --scroll-thumb-hover: rgba(255, 255, 255, 0.52);
+  --scroll-thumb-active: rgba(255, 255, 255, 0.7);
 }
 
 body[data-theme='light'] {
@@ -31,9 +35,50 @@ body[data-theme='light'] {
   --card-border: rgba(0, 0, 0, 0.06);
   --bar-bg: #ffffff;
   --hover: rgba(0, 0, 0, 0.04);
+  --scroll-thumb: rgba(0, 0, 0, 0.2);
+  --scroll-thumb-hover: rgba(0, 0, 0, 0.5);
+  --scroll-thumb-active: rgba(0, 0, 0, 0.7);
 }
 
 #app {
   display: flex;
   flex-direction: column;
+}
+
+.list-root > :first-child,
+.list-root > :nth-child(2) {
+  flex-shrink: 0;
+}
+
+.list-body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) transparent;
+}
+
+.list-body::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.list-body:hover::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.list-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list-body::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 999px;
+  transition: background-color 0.15s ease;
+}
+
+.list-body::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+.list-body::-webkit-scrollbar-thumb:active {
+  background: var(--scroll-thumb-active);
 }

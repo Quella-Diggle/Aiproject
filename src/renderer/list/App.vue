@@ -107,14 +107,17 @@ const containerRef = ref<HTMLElement | null>(null);
 .list-root {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background: var(--bg);
   color: var(--fg);
+  min-height: 0;
+  overflow: hidden;
 }
 
 .list-body {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 6px 8px 12px;
   user-select: none;
