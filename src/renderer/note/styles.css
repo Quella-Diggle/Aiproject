@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  user-select: none;
+  background: var(--note-bg, #fff8c4);
+  color: #222;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+.tiptap-editor {
+  outline: none;
+  flex: 0 0 auto;
+  min-height: 0;
+  overflow: visible;
+  padding: 8px 12px;
+  user-select: text;
+  cursor: text;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.editor-host::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.content-area:hover .editor-host::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.content-area:hover .editor-host::-webkit-scrollbar:hover {
+  width: 8px;
+  height: 8px;
+}
+
+.editor-host::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-area:hover .editor-host::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.content-area:hover .editor-host::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.content-area:hover .editor-host::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.window-blur .editor-host::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.event-node {
+  position: relative;
+  padding: 2px 4px;
+  margin: 0;
+  min-height: 1.6em;
+  border-radius: 3px;
+}
+
+.event-node[data-indent='1'] {
+  margin-left: 2ch;
+}
+
+.event-node[data-completed='true'] {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.tiptap-editor strong {
+  font-weight: 700;
+}
+
+.tiptap-editor p,
+.tiptap-editor div {
+  margin: 0;
+}

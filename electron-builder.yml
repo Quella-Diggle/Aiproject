@@ -1,0 +1,25 @@
+appId: com.stickynotes.app
+productName: StickyNotes
+directories:
+  buildResources: resources
+  output: dist
+files:
+  - "out/**/*"
+  - "package.json"
+  - "!**/*.map"
+  - "!**/*.ts"
+asar: true
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: ${productName}-${version}-${arch}.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: StickyNotes
+publish: null

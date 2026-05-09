@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  user-select: none;
+  background: var(--bg, #fafafa);
+  color: var(--fg, #222);
+}
+
+body[data-theme='dark'] {
+  --bg: #1f1f23;
+  --fg: #eaeaea;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --bar-bg: #2a2a30;
+  --hover: rgba(255, 255, 255, 0.06);
+}
+
+body[data-theme='light'] {
+  --bg: #fafafa;
+  --fg: #222;
+  --card-border: rgba(0, 0, 0, 0.06);
+  --bar-bg: #ffffff;
+  --hover: rgba(0, 0, 0, 0.04);
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
